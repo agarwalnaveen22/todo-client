@@ -1,0 +1,43 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Todo</a>
+  <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="logout()">Logout</button>
+</nav>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <button type="button" class="btn btn-primary" (click)="addTask('')">Add Task</button>
+    </div>
+  </div>
+ 
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Row</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Status</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of tasks; let i = index">
+        <td>{{(i+1)}}</td>
+        <td>{{task.title}}</td>
+        <td>{{task.description}}</td>
+        <td>{{task.startDate | date: 'MMM d, y'}}</td>
+        <td>{{task.endDate | date: 'MMM d, y'}}</td>
+        <td>{{task.status | showStatus}}</td>
+        <td>{{task.createdDate | date: 'MMM d, y h:mm a'}}</td>
+        <td>
+          <button type="button" class="btn btn-warning" (click)="addTask(task.id)">Edit</button>
+          &nbsp;&nbsp;<button type="button" class="btn btn-danger" (click)="removeTask(task.id)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

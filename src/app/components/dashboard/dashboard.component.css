@@ -1,0 +1,10 @@
+.panel-default {
+    height: 4em;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 10px;
+}
+.panel-body {
+    float: right;
+    padding: 0.8em;
+}
