@@ -5,6 +5,9 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ToastrModule } from 'ng6-toastr-notifications';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { DashboardComponent } from '../dashboard/dashboard.component';
+import { ShowStatusPipe } from 'src/app/pipes/show-status.pipe';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -12,12 +15,17 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [ 
+        LoginComponent,
+        DashboardComponent,
+        ShowStatusPipe
+      ],
       imports: [
         FormsModule,
         HttpClientModule,
         Ng4LoadingSpinnerModule,
-        ToastrModule
+        ToastrModule.forRoot(),
+        AppRoutingModule
       ]
     })
     .compileComponents();
