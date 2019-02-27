@@ -1,27 +1,29 @@
 # Todo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+This is fornt end of todo assignment app, this project uses docker hence we need to install docker, installing steps is already mentioned in https://github.com/agarwalnaveen22/todo-server
 
-## Development server
+# Clone repository
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+git clone https://github.com/agarwalnaveen22/todo-client.git
 
-## Code scaffolding
+# Add api host address
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Add host ip/domain address in src/environments/environment.local.ts
 
-## Build
+# Create docker image
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+go to project root folder and run following command:-
 
-## Running unit tests
+docker build -t todo-client:latest .
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Run docker container
 
-## Running end-to-end tests
+docker run -d -p 4200:80 todo-client
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+# Check app
 
-## Further help
+go to any browser and enter following url:-
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+http://localhost:4200
+
+Now create a new user using swagger and login into the app
